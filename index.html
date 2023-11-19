@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SuperFakeStore</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Header/Hero -->
+    <header>
+      <section id="header__hero">
+        <h1>SuperFakeStore</h1>
+        <article>
+          <h3 class="uppercase">season hightlight</h3>
+          <p>Discover our new collection</p>
+          <a class="btn btn__highlight uppercase" href="#main">shop now</a>
+        </article>
+      </section>
+    </header>
+
+    <!-- Main -->
+    <main id="main">
+      <!-- Filter Options -->
+      <section class="container shop__filter" id="shopFilter">
+        <!-- Search function & Sort by price -->
+        <form>
+          <div>
+            <input
+              type="text"
+              name="searchInput"
+              id="searchInput"
+              placeholder="Search by product name"
+            />
+
+            <select name="sortBy" id="sortByPrice">
+              <option value="">Sort by</option>
+              <option value="priceLowToHigh" id="sortLoToHi">
+                Price - Low to High
+              </option>
+              <option value="priceHighToLow" id="sortHiToLo">
+                Price - High to Low
+              </option>
+            </select>
+          </div>
+        </form>
+
+        <!-- Filter by categories -->
+        <article>
+          <p>Filter by Categories:</p>
+          <button class="btn btn__outline" id="filterWomenButton">
+            women's clothing
+          </button>
+          <button class="btn btn__outline" id="filterMenButton">
+            men's clothing
+          </button>
+          <button class="btn btn__outline" id="filterJeweleryButton">
+            jewelery
+          </button>
+          <button class="btn btn__outline" id="filterElectronicsButton">
+            electronics
+          </button>
+        </article>
+      </section>
+
+      <!-- Product Section -->
+      <section class="product__section" id="productSection"></section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="container">
+      <article>
+        <h4>Image resources:</h4>
+        <!-- <p>
+          "Sale" image by
+          <a
+            href="https://unsplash.com/de/@markusspiske?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+            >Markus Spiske</a
+          >
+          auf
+          <a
+            href="https://unsplash.com/de/fotos/mann-in-gruner-jacke-tagsuber-auf-dem-burgersteig-BTKF6G-O8fU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+            >Unsplash</a
+          >
+        </p> -->
+        <p>
+          "Shopping lady" image by
+          <a
+            href="https://unsplash.com/de/@markusspiske?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+            >Markus Spiske </a
+          >auf
+          <a
+            href="https://unsplash.com/de/fotos/mann-in-gruner-jacke-tagsuber-auf-dem-burgersteig-BTKF6G-O8fU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+            >Unsplash</a
+          >
+        </p>
+      </article>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

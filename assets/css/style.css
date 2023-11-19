@@ -1,0 +1,245 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url("./../font/Montserrat-VariableFont_wght.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #d9d6c7;
+    --primary: #4c0b1c;
+    --primary-light: #d91414;
+    --primary-dark: #40121e;
+    --bright-beige: #f9f9f6;
+    --secondary: #365b73;
+    --secondary-light: #55788f;
+    --rose: #f2c1ae;
+}
+
+/* ************************************
+        General
+*************************************** */
+body {
+    /* background-color: var(--bg-color); */
+    background-color: var(--bright-beige);
+    font-family: "Montserrat";
+}
+
+.container {
+    margin: 50px auto;
+    width: 80%;
+    /* background-color: var(--primary); */
+    background-color: var(--secondary);
+    color: var(--bright-beige);
+    border-radius: 7px;
+}
+
+/* ************************************
+        Text styles
+*************************************** */
+h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    margin-block: 10px;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+/* ************************************
+        Buttons
+*************************************** */
+button {
+    border: none;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 30px;
+    text-align: center;
+    color: var(--bright-beige);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn__highlight {
+    width: 100%;
+    background-color: var(--primary-light);
+    border: 3px solid var(--primary-light);
+}
+
+.btn__highlight:hover {
+    background-color: transparent;
+    border: 3px solid var(--primary-light);
+    color: black;
+    font-weight: 600;
+}
+
+.btn__filled {
+    background-color: var(--primary);
+    transition: 0.3s;
+}
+
+.btn__filled:hover {
+    background-color: var(--primary-light);
+}
+
+.btn__outline {
+    background-color: transparent;
+    border: 3px solid var(--bright-beige);
+    transition: 0.3s;
+}
+
+.btn__outline:hover {
+    background-color: var(--bright-beige);
+    color: var(--secondary)
+}
+
+/* ************************************
+            Header
+*************************************** */
+header {
+    margin: 0 auto 4rem auto;
+    height: 100vh;
+    background-image: url("./../img/shopping_lady.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    font-size: 1.5rem;
+}
+
+header section {
+    margin-left: 10vw;
+    padding-top: 2%;
+    width: 40%;
+}
+
+header section article {
+    width: 60%;
+    line-height: 1.5;
+}
+
+/* ************************************
+            Main
+*************************************** */
+
+/* ***********************
+        Shop filter
+************************** */
+.shop__filter {
+    padding: 2%;
+}
+
+.shop__filter form div {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.shop__filter form div input[type=text] {
+    width: 400px;
+    text-indent: 10px;
+}
+
+.shop__filter form div input[type=text],
+.shop__filter form div select {
+    height: 50px;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 3px;
+}
+
+.shop__filter article {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 30px;
+}
+
+.shop__filter article button {
+    flex-basis: 190px;
+    height: 50px;
+}
+
+
+/* ***********************
+    Product Section
+************************** */
+.product__section {
+    margin: 0 auto;
+    width: 80%;
+    border-radius: 7px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.product__card {
+    padding: 20px;
+    max-width: 350px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 7px;
+    box-shadow: 2px 2px 5px rgb(144, 144, 144), -2px 0px 5px rgb(144, 144, 144);
+    text-align: center;
+}
+
+.product__card div:nth-of-type(1) img {
+    max-width: 200px;
+    max-height: 60%;
+}
+
+.product__card div:nth-of-type(1) {
+    padding-bottom: 20px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product__card div:nth-of-type(2) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-top: var(--secondary) solid 1px;
+}
+
+.price {
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+/* ************************************
+            Footer
+*************************************** */
+footer article {
+    padding: 2%;
+    line-height: 1.5;
+    font-size: 0.8rem;
+}
