@@ -15,8 +15,8 @@ This project was created as part of a coding bootcamp (fullstack development) at
 
 ## Screenshots 📸
 
-![SuperFakeStore](./assets/misc/Onlineshophero.png)
-![SuperFakeStore-Products](./assets/misc/Onlineshopproducts.png)
+![SuperFakeStore](./assets/misc/Onlineshophero-min.png)
+![SuperFakeStore-Products](./assets/misc/Onlineshopproducts-min.png)
 
 ## Features ⭐️
 
