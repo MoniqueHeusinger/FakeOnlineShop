@@ -205,6 +205,11 @@ header section article {
     border-radius: 7px;
     box-shadow: 2px 2px 5px rgb(144, 144, 144), -2px 0px 5px rgb(144, 144, 144);
     text-align: center;
+    transition: transform 0.5s;
+}
+
+.product__card:hover {
+    transform: scale(1.05);
 }
 
 .product__card div:nth-of-type(1) img {
