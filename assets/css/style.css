@@ -110,7 +110,8 @@ button {
     transition: 0.3s;
 }
 
-.btn__outline:hover {
+.btn__outline:hover,
+.btn__active {
     background-color: var(--bright-beige);
     color: var(--secondary)
 }
@@ -210,6 +211,7 @@ header section article {
 
 .product__card:hover {
     transform: scale(1.05);
+    box-shadow: 2px 2px 8px rgb(144, 144, 144), -2px 0px 8px rgb(144, 144, 144);
 }
 
 .product__card div:nth-of-type(1) img {
