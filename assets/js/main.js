@@ -1,66 +1,95 @@
 "use strict";
 
-// Variablen - Elemente aus dem HTML
+// ====================================
+//  variables
+// ====================================
+
+// -- Output Gallery --
 const outputProductGallery = document.body.querySelector("#productSection");
+// -- Buttons --
+const allFilterButtons = document.body.querySelectorAll("main section article button");
+const buttonAllProducts = document.body.querySelector("#allProductsButton");
 const buttonFilterWomen = document.body.querySelector("#filterWomenButton");
 const buttonFilterMen = document.body.querySelector("#filterMenButton");
 const buttonFilterJewelery = document.body.querySelector("#filterJeweleryButton");
 const buttonFilterElectronics = document.body.querySelector("#filterElectronicsButton");
+// -- Select-Tags Sort By Price --
 const selectSortPrice = document.body.querySelector("#sortByPrice");
 const selectSortPriceLoToHi = document.body.querySelector("#sortLoToHi");
 const selectSortPriceHiToLo = document.body.querySelector("#sortHiToLo");
 
 let allProductsArr = [];
 
-// Empty Gallery before new fetch
+// ====================================
+//  Empty Gallery before new fetch
+// ====================================
+
 const requestFetch = () => {
     outputProductGallery.innerHTML = "";
 };
 
-// ===========================
-//  Show all products
-// ===========================
+// ====================================
+//  Landing Page - fetch all products
+// ====================================
+
+const showAllProducts = () => {
     fetch("https://fakestoreapi.com/products")
-        .then(response => {
-            console.log(response);
-            if (response.ok) {
-                return response.json();
-            } else {
-                throw new Error("Leider gab es einen Fehler!");
-            }
-            
-        })
-        .then(data => {
-            console.log(data);
-
-            data.forEach((product) => {
-                renderElements(product);
-            })
-
-            // Kopie aller Produkte in ein neues Array
-            allProductsArr.push(data); 
-            console.log(allProductsArr);
-
-            sortProductsByPrice(data);
-
-        })
-        .catch(error => console.log(error));
-
+    .then(response => {
+        // console.log(response);
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error("Leider gab es einen Fehler!");
+        }
         
+    })
+    .then(data => {
+        // console.log(data);
 
-// ===========================
+        data.forEach((product) => {
+            renderElements(product);
+        })
+
+        // Kopie aller Produkte in ein neues Array
+        allProductsArr.push(data); 
+        // console.log(allProductsArr);
+
+        sortProductsByPrice(data);
+
+    })
+    .catch(error => console.log(error));
+}
+showAllProducts();
+
+
+// ===============================
+//  Filter/Button: All products
+// ===============================
+buttonAllProducts.addEventListener("click", () => {
+    // Empty Gallery before new fetch
+    requestFetch();
+
+    showAllProducts();
+    // Remove CSS-class "btn__active" from every button
+    for (let button of allFilterButtons) {
+        button.classList.remove("btn__active");
+    }
+    // Then add CSS-class "btn__active" to current button clicked
+    buttonAllProducts.classList.add("btn__active");
+
+})
+
+// ==============================
 //  Sortierung - Low to High
-// ===========================
+// ==============================
 
 const sortProductsByPrice = (itemsSorted) => {
-    // const selectOptions = document.getElementById('sort-input'); == mein selectSortPrice
     selectSortPrice.addEventListener("change", () => {
         const selectedIndexValue = selectSortPrice.value;
         outputProductGallery.innerHTML = "";
         
         if(selectedIndexValue === "priceLowToHigh"){
             itemsSorted.sort((prodA, prodB) => prodA.price - prodB.price);
-            // console.log(arrayWithAllObjects);
         } else {
             itemsSorted.reverse();
         }
@@ -83,15 +112,22 @@ buttonFilterWomen.addEventListener("click", () => {
 
     fetch("https://fakestoreapi.com/products/category/women's%20clothing")
         .then(response => {
-            console.log(response);
+            // console.log(response);
             return response.json();
         })    
         .then(items => {
-            console.log(items);
+            // console.log(items);
             items.forEach((product) => {
                 renderElements(product);
             })
-
+            
+            // Remove CSS-class "btn__active" from every button
+            for (let button of allFilterButtons) {
+                button.classList.remove("btn__active");
+            }
+            // Then add CSS-class "btn__active" to current button clicked
+            buttonFilterWomen.classList.add("btn__active");
+            
             sortProductsByPrice(items);
         })
     });
@@ -108,14 +144,21 @@ buttonFilterMen.addEventListener("click", () => {
 
     fetch("https://fakestoreapi.com/products/category/men's%20clothing")
         .then(response => {
-            console.log(response);
+            // console.log(response);
             return response.json();
         })    
         .then(items => {
-            console.log(items);
+            // console.log(items);
             items.forEach((product) => {
                 renderElements(product);
             })
+            
+            // Remove CSS-class "btn__active" from every button
+            for (let button of allFilterButtons) {
+                button.classList.remove("btn__active");
+            }
+            // Then add CSS-class "btn__active" to current button clicked
+            buttonFilterMen.classList.add("btn__active");
 
             sortProductsByPrice(items);
         })
@@ -133,14 +176,21 @@ buttonFilterJewelery.addEventListener("click", () => {
 
     fetch("https://fakestoreapi.com/products/category/jewelery")
         .then(response => {
-            console.log(response);
+            // console.log(response);
             return response.json();
         })    
         .then(items => {
-            console.log(items);
+            // console.log(items);
             items.forEach((product) => {
                 renderElements(product);
             })
+
+            // Remove CSS-class "btn__active" from every button
+            for (let button of allFilterButtons) {
+                button.classList.remove("btn__active");
+            }
+            // Then add CSS-class "btn__active" to current button clicked
+            buttonFilterJewelery.classList.add("btn__active");
 
             sortProductsByPrice(items);
         })
@@ -158,14 +208,21 @@ buttonFilterElectronics.addEventListener("click", () => {
 
     fetch("https://fakestoreapi.com/products/category/electronics")
         .then(response => {
-            console.log(response);
+            // console.log(response);
             return response.json();
         })    
         .then(items => {
-            console.log(items);
+            // console.log(items);
             items.forEach((product) => {
                 renderElements(product);
             })
+
+            // Remove CSS-class "btn__active" from every button
+            for (let button of allFilterButtons) {
+                button.classList.remove("btn__active");
+            }
+            // Then add CSS-class "btn__active" to current button clicked
+            buttonFilterElectronics.classList.add("btn__active");
 
             sortProductsByPrice(items);
         })
